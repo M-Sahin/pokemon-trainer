@@ -11,6 +11,8 @@ import { CataloguePage } from './pages/catalogue/catalogue.component';
 import { LoginPage } from './pages/login/login.component';
 import { TrainerPage } from './pages/trainer/trainer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule} from '@angular/common/http';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TrainerSummaryComponent,
     CataloguePage,
     LoginPage,
-    TrainerPage
-  ],
+    TrainerPage,
+    PokemonListComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
