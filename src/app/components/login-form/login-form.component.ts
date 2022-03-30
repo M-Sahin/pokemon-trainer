@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from 'express';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login-form',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
   }
