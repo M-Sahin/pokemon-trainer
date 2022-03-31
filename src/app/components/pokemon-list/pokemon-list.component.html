@@ -1,11 +1,26 @@
-<ul>
-    <div class="d-flex justify-content-center flex-wrap">
-        <div *ngFor="let pokemon of pokemons; let indexOfelement=index;" class="card " style="width: 18rem;">
-            <img class="card-img-top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonId[indexOfelement]}}.png" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">#{{pokemonId[indexOfelement]}} {{pokemon.name}}</h5>
-                <a  style="width: 100%;"(click)='onCatchClick(pokemon.name)' class="btn btn-primary">Catch</a>
-            </div>
+<div class = "d-flex justify-content-center flex-wrap">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item" (click)='onPageClick(0)'><a class="page-link" >1</a></li>
+          <li class="page-item" (click)='onPageClick(100)'><a class="page-link" >2</a></li>
+          <li class="page-item" (click)='onPageClick(200)'><a class="page-link" >3</a></li>
+          <li class="page-item" (click)='onPageClick(300)'><a class="page-link" >4</a></li>
+          <li class="page-item" (click)='onPageClick(400)'><a class="page-link" >5</a></li>
+          <li class="page-item" (click)='onPageClick(500)'><a class="page-link" >6</a></li>
+          <li class="page-item" (click)='onPageClick(600)'><a class="page-link" >7</a></li>
+          <li class="page-item" (click)='onPageClick(700)'><a class="page-link" >8</a></li>
+          <li class="page-item" (click)='onPageClick(800)'><a class="page-link" >9</a></li>
+          <li class="page-item" (click)='onPageClick(900)'><a class="page-link" >10</a></li>
+          
+        </ul>
+      </nav>
+</div>
+<div class="d-flex justify-content-center flex-wrap">
+    <div *ngFor="let pokemon of pokemons; let indexOfelement=index;" class="card " style="width: 18rem;">
+        <img class="card-img-top" src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">#{{pokemon.id}} {{pokemon.name}}</h5>
+            <a  style="width: 100%;"(click)='onCatchClick(pokemon.name)' class="btn btn-primary">Catch</a>
         </div>
     </div>
-</ul>
+</div>

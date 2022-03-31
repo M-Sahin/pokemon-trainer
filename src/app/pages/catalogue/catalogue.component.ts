@@ -36,7 +36,11 @@ export class CataloguePage {
 
 
   ngOnInit(): void {
-    this.pokemonCatalogueService.findAllPokemons();
+    this.pokemonCatalogueService.findAllPokemons(0);
+  }
+  
+  pagination(page:number): void {
+    this.pokemonCatalogueService.findAllPokemons(page);
   }
 
 }

@@ -36,19 +36,19 @@ get pokemonId(): string[]{
   constructor(private readonly http: HttpClient) { }
 
 
-  public findAllPokemons(): void {
-    this.http.get<Pokemon[]>("https://pokeapi.co/api/v2/pokemon?limit=100&offset=200")
+  public findAllPokemons(pagination: any): void {
+    this.http.get<Pokemon[]>(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=` + pagination)
     .pipe(
       finalize(() => {
         this._loading = false;
-        this.pokemons.map((pokemon )=> {
-          let  urlArray = pokemon.url.split('/');
-          this._pokemonId.push(urlArray[6]);
-        })
       }))
     .subscribe({
       next: (pokemon: any) => {
         this._pokemons = pokemon.results;
+        this._pokemons.map((pokemon)=>{
+          let  urlArray = pokemon.url.split('/');
+          pokemon.id=urlArray[6]
+        })
       },
       error: (error: HttpErrorResponse) => {
         this._error = error.message;
