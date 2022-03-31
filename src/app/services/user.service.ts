@@ -81,8 +81,23 @@ export class UserService {
       });
   }
 
-  public addPokemon(id:string):void{
-
+  public addPokemon(pokemonName:string):void{
+    const headers = this.createHeaders();
+    this.http
+    .get<User[]>(
+      `https://mm-assignment-api.herokuapp.com/trainers/${this.user.id}`
+    ).subscribe((response:any)=>{
+      let currentPokemons:string[] = response["pokemon"];
+      currentPokemons.push(pokemonName);
+      this.http
+      .patch(`https://mm-assignment-api.herokuapp.com/trainers/${this.user.id}`,{
+        "pokemon" : currentPokemons
+      },{
+        headers
+      }).subscribe((response)=>{
+        console.log(response)
+      })
+    })
   }
 
   // function for clearing user from session storage and routing back to default page -> login screen
