@@ -21,6 +21,10 @@ export class PokemonListComponent implements OnInit {
     this.userService.addPokemon(pokemonName);
   }
 
+  onDeleteClick(): void{
+    this.userService.deletePokemons();
+  }
+
   ngOnInit(): void {
   }
 
