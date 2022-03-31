@@ -4,7 +4,7 @@
             <img class="card-img-top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonId[indexOfelement]}}.png" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">#{{pokemonId[indexOfelement]}} {{pokemon.name}}</h5>
-                <a  style="width: 100%;"(click)='onCatchClick(pokemonId[indexOfelement])' class="btn btn-primary">Catch</a>
+                <a  style="width: 100%;"(click)='onCatchClick(pokemon.name)' class="btn btn-primary">Catch</a>
             </div>
         </div>
     </div>

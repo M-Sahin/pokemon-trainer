@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -11,11 +12,18 @@ export class PokemonListComponent implements OnInit {
   @Input() pokemons: Pokemon[] = [];
   @Input() pokemonId: string[] = [];
 
-  onCatchClick(id:string): void{
-    console.log(id)
-    }
+  constructor(
+    private userService: UserService
 
-  constructor() { }
+  ) { }
+
+  onCatchClick(pokemonName:string): void{
+    this.userService.addPokemon(pokemonName);
+  }
+
+  onDeleteClick(): void{
+    this.userService.deletePokemons();
+  }
 
   ngOnInit(): void {
   }
