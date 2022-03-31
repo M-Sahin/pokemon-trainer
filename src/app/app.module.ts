@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { CataloguePage } from './pages/catalogue/catalogue.page';
 import { LoginPage } from './pages/login/login.page';
 import { TrainerPage } from './pages/trainer/trainer.page';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,17 +11,21 @@ import { CatalogueResultsComponent } from './components/catalogue-results/catalo
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TrainerSummaryComponent } from './components/trainer-summary/trainer-summary.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component'
+import { CataloguePage } from './pages/catalogue/catalogue.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPage,
     TrainerPage,
-    CataloguePage,
     NavbarComponent,
     LoginFormComponent,
     CatalogueResultsComponent,
-    TrainerSummaryComponent
+    TrainerSummaryComponent,
+    PokemonListComponent,
+    CataloguePage
   ],
   imports: [
     BrowserModule,

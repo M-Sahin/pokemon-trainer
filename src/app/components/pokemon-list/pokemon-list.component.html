@@ -1,6 +1,11 @@
 <ul>
-    <li *ngFor="let pokemon of pokemons; let indexOfelement=index;">
-        <span>{{pokemon.name}} </span>
-        <img src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonId[indexOfelement]}}.png">
-    </li>
+    <div class="d-flex justify-content-center flex-wrap">
+        <div *ngFor="let pokemon of pokemons; let indexOfelement=index;" class="card " style="width: 18rem;">
+            <img class="card-img-top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemonId[indexOfelement]}}.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">#{{pokemonId[indexOfelement]}} {{pokemon.name}}</h5>
+                <a  style="width: 100%;"(click)='onCatchClick(pokemonId[indexOfelement])' class="btn btn-primary">Catch</a>
+            </div>
+        </div>
+    </div>
 </ul>

@@ -81,6 +81,10 @@ export class UserService {
       });
   }
 
+  public addPokemon(id:string):void{
+
+  }
+
   // function for clearing user from session storage and routing back to default page -> login screen
   public logout(): void {
     // clear user from session storage

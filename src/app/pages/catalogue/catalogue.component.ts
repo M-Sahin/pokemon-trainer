@@ -34,6 +34,7 @@ export class CataloguePage {
     private readonly pokemonCatalogueService: PokemonCatalogueService
   ) { }
 
+
   ngOnInit(): void {
     this.pokemonCatalogueService.findAllPokemons();
   }

@@ -11,6 +11,10 @@ export class PokemonListComponent implements OnInit {
   @Input() pokemons: Pokemon[] = [];
   @Input() pokemonId: string[] = [];
 
+  onCatchClick(id:string): void{
+    console.log(id)
+    }
+
   constructor() { }
 
   ngOnInit(): void {
