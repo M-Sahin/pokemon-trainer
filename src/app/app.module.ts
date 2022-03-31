@@ -1,34 +1,37 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginFormComponent } from './components/login-form/login-form.component';
+import { CataloguePage } from './pages/catalogue/catalogue.page';
+import { LoginPage } from './pages/login/login.page';
+import { TrainerPage } from './pages/trainer/trainer.page';
+import { AppRoutingModule } from './app-routing.module';
 import { CatalogueResultsComponent } from './components/catalogue-results/catalogue-results.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TrainerSummaryComponent } from './components/trainer-summary/trainer-summary.component';
-import { CataloguePage } from './pages/catalogue/catalogue.component';
-import { LoginPage } from './pages/login/login.component';
-import { TrainerPage } from './pages/trainer/trainer.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginPage,
+    TrainerPage,
+    CataloguePage,
+    NavbarComponent,
     LoginFormComponent,
     CatalogueResultsComponent,
-    NavbarComponent,
-    TrainerSummaryComponent,
-    CataloguePage,
-    LoginPage,
-    TrainerPage
+    TrainerSummaryComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    NgbModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+  
 export class AppModule { }
