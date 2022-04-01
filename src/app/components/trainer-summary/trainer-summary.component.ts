@@ -17,6 +17,7 @@ export class TrainerSummaryComponent {
   get username(): string {
       return this.userService.user.username;
   }
+  // a getter function for getting pokemons
   get pokemons(): string[] {
     let user = JSON.parse(sessionStorage.getItem('trainer-session') || '{}')
     let pokemons = user["pokemon"]
@@ -26,6 +27,7 @@ export class TrainerSummaryComponent {
     }
     return(pokemonsArray)
 }
+// function for getting pokemons and put them in array and showing the id
 get pokemonsId(): any {
   let user = JSON.parse(sessionStorage.getItem('trainer-session') || '{}')
   let pokemons = user["pokemon"]
@@ -35,7 +37,7 @@ get pokemonsId(): any {
   }
   return(pokemonsIdArray)
 }
-
+// a function for deleting pokemons from the user and API
 onPokemonreleaseClick(pokemon:string): void{
   this.userService.releasePokemon(pokemon);
 }

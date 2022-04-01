@@ -6,7 +6,7 @@ import { UserService } from '../services/user.service';
 @Injectable({
   providedIn: 'root'
 })
-// the template for this component is modified from the example project in 
+// the template for this component is modified from example project:
 // https://gitlab.com/sumodevelopment/angular-movies-demo-java-2022/-/blob/main/src/app/guards/auth.guard.ts
 export class AuthGuard implements CanActivate {
 

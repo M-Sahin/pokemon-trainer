@@ -35,7 +35,7 @@ get pokemonId(): string[]{
 }
   constructor(private readonly http: HttpClient) { }
 
-
+// function for getting all pokemons from API
   public findAllPokemons(pagination: any): void {
     this.http.get<Pokemon[]>(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=` + pagination)
     .pipe(

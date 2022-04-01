@@ -80,7 +80,7 @@ export class UserService {
         }
       });
   }
-
+// function for adding pokemons to user id and storing it on API and sessionstorage
   public addPokemon(pokemonName:string):void{
     const headers = this.createHeaders();
     this.http
@@ -101,7 +101,7 @@ export class UserService {
       })
     })
   }
-
+  // function for deleting pokemons from user id
   public deletePokemons():void{
     const headers = this.createHeaders();
     this.http
@@ -116,7 +116,7 @@ export class UserService {
         sessionStorage.setItem('trainer-session', JSON.stringify(response));
       })
   }
-
+  // function for deleting pokemons from user id
   public releasePokemon(pokemon:string): void {
     console.log(pokemon)
     const headers = this.createHeaders();

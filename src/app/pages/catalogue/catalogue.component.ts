@@ -39,7 +39,7 @@ export class CataloguePage {
     this.pokemonCatalogueService.savePokemons()
     this.pokemonCatalogueService.findAllPokemons(0);
   }
-  
+  // added pagination
   pagination(page:number): void {
     this.pokemonCatalogueService.findAllPokemons(page);
   }

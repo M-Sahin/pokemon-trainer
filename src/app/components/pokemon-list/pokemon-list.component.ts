@@ -18,15 +18,11 @@ export class PokemonListComponent implements OnInit {
     private readonly PokemonCatalogueService: PokemonCatalogueService
 
   ) { }
-
+    // a function for catching pokemon
   onCatchClick(pokemonName:string): void{
     this.userService.addPokemon(pokemonName);
   }
-
-  onDeleteClick(): void{
-    this.userService.deletePokemons();
-  }
-
+  
   onPageClick(page:any): void{
     this.PokemonCatalogueService.findAllPokemons(page);
   }
