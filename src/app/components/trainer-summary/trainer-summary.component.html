@@ -7,9 +7,9 @@
     <div class='row g-2'>
         <div class='col-3 text-center' *ngFor="let pokemon">
             <div class='p-3 border bg-light'>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png" alt='{{pokemon.name}}' />
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png" alt='{{pokemon.name}}'/>
                 <p class='trainer-summary-name'>{{ pokemon.name }}</p>
-                <button (click)="onDeletePokemon(pokemon.name)" class="remove-button btn">
+                <button (click)="onDeletePokemon(pokemon)" class="remove-button btn">
                     <span class='remove-button-icon material-icons'>close</span>
                 </button>
             </div>
