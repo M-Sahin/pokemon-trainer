@@ -36,6 +36,7 @@ export class CataloguePage {
 
 
   ngOnInit(): void {
+    this.pokemonCatalogueService.savePokemons()
     this.pokemonCatalogueService.findAllPokemons(0);
   }
   

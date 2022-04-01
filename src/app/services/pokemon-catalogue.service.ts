@@ -55,4 +55,25 @@ get pokemonId(): string[]{
       },
     });
   }
+  public savePokemons(): void {
+    this.http.get<Pokemon[]>(`https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0`)
+    .pipe(
+      finalize(() => {
+        this._loading = false;
+      }))
+    .subscribe({
+      next: (pokemon: any) => {
+        this._pokemons = pokemon.results;
+        this._pokemons.map((pokemon)=>{
+          let  urlArray = pokemon.url.split('/');
+          pokemon.id=urlArray[6]
+          sessionStorage.setItem(pokemon.name, pokemon.id)
+        })
+      },
+      error: (error: HttpErrorResponse) => {
+        this._error = error.message;
+      },
+    });
+  }
+
 }

@@ -117,6 +117,35 @@ export class UserService {
       })
   }
 
+  public releasePokemon(pokemon:string): void {
+    console.log(pokemon)
+    const headers = this.createHeaders();
+    this.http
+    .get<User[]>(
+      `https://mm-assignment-api.herokuapp.com/trainers/${this.user.id}`
+    ).subscribe((response:any)=>{
+      let currentPokemons:string[] = response["pokemon"];
+      currentPokemons.map((currentPokemon, index)=>{
+        if (currentPokemon == pokemon){
+          console.log(index)
+          currentPokemons.splice(index, 1)
+        }
+
+      })
+      console.log(currentPokemons)
+      this.http
+      .patch(`https://mm-assignment-api.herokuapp.com/trainers/${this.user.id}`,{
+        "pokemon" : currentPokemons
+      },{
+        headers
+      }).subscribe((response)=>{
+        sessionStorage.setItem('trainer-session', JSON.stringify(response));
+        console.log(sessionStorage.getItem('trainer-session'))
+
+      })
+    })
+  }
+
   // function for clearing user from session storage and routing back to default page -> login screen
   public logout(): void {
     // clear user from session storage
