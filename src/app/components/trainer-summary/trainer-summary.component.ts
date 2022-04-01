@@ -16,4 +16,7 @@ export class TrainerSummaryComponent {
   get username(): string {
       return this.userService.user.username;
   }
+  get currentPokemons(): string {
+      return this.currentPokemons
+  }
 }
